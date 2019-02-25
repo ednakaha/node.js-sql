@@ -23,9 +23,9 @@ app.get('/student', function (req, res) {
 
 
     connection.query('SELECT * from students', function (error, results, fields) {
-        
+        connection.end();      
         if (error) throw error;
-        connection.end();
+ 
         res.send(results);
     });
 
