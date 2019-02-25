@@ -23,10 +23,12 @@ app.get('/student', function (req, res) {
 
 
     connection.query('SELECT * from students', function (error, results, fields) {
+        
         if (error) throw error;
+        connection.end();
         res.send(results);
     });
-    connection.end();
+
 
 });
 
